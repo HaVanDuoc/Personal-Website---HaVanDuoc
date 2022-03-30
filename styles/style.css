@@ -172,7 +172,7 @@ img {
 .hvd__home {
   height: 100vh;
   min-height: 500px;
-  background: url("/images/bg-home.png") no-repeat center;
+  background: url("../images/bg-home.png") no-repeat center;
   font-family: "Ubuntu", sans-serif;
 }
 
