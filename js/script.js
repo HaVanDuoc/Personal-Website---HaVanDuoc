@@ -13,13 +13,14 @@ window.onload = (
     menuToggle = () => {
         const menu = document.getElementById('menu');
         const menuBtn = document.getElementById('menu-btn');
-        console.log(menuBtn);
 
         menuBtn.addEventListener('mouseenter', () => {
             menu.classList.add('active');
+            menuBtn.classList.add('active');
         })
-        menuBtn.addEventListener('mouseleave', () => {
+        window.addEventListener('click', () => {
             menu.classList.remove('active');
+            menuBtn.classList.remove('active');
         })
     }
 );
