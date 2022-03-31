@@ -52,7 +52,10 @@ p {
 
 .fullscreen {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .title-sm {
@@ -233,7 +236,11 @@ p {
 
 /* --------------------- About ---------------------- */
 
-.hvd__about {
+.hvd__about,
+.hvd__education,
+.hvd__skills,
+.hvd__projects,
+.hvd__contact {
   font-family: 'Poppins', sans-serif;
 }
 
@@ -271,6 +278,7 @@ p {
   font-weight: 500;
   padding: 20px 0;
   pointer-events: none;
+  margin-top: 70px;
 }
 
 .title-home::after {
@@ -302,10 +310,15 @@ p {
   transition: all .3s ease;
 }
 
-.hvd__about .btn:hover{
+.hvd__about .btn:hover {
   background-color: brown;
 }
 
-@media (max-width: 1000px) {
-  .hvd__about .btn
+@media (max-width: 500px) {
+  .hvd__about .btn {
+    padding: 5px 20px;
+    font-size: 3.5vw;
+  }
 }
+
+/* Section Education */
