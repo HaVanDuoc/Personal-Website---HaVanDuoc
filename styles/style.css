@@ -35,6 +35,7 @@ video {
 p {
   padding-bottom: 17px;
   text-align: justify;
+  transition: all .3s ease;
 }
 
 .max-width {
@@ -48,7 +49,7 @@ p {
 
 .fullscreen {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -280,18 +281,13 @@ section .cus-width {
 
 /* --------------------- About ---------------------- */
 
-/* .hvd__about .cus-width {
-  display: flex;
-  flex-direction: column;
-} */
-
 .title-pagehome {
   font-size: 30px;
   color: var(--color-main);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 40px;
+  margin: 3vw;
   white-space: nowrap;
   pointer-events: none;
 }
@@ -319,7 +315,7 @@ section .cus-width {
 }
 
 .about-content .avatar {
-  height: 50vh;
+  height: 400px;
   transition: all .3s ease;
 }
 
@@ -334,25 +330,24 @@ section .cus-width {
 
 /* for About-content */
 @media (max-width: 1000px) {
-
   .about-content .text {
-    font-size: 2vh;
+    font-size: 100%;
   }
 }
 
 /* for About-content */
-@media (max-width: 750px) {
+@media (max-width: 1000px) {
   .about-content {
     display: grid;
   }
 
-  .about-content .avatar{
+  .about-content .avatar {
     display: flex;
     justify-content: center;
-    height: 35vh;
+    height: 300px;
   }
 
-  .about-content .text{
+  .about-content .text {
     margin-top: 20px;
     margin-left: 0;
   }
@@ -363,7 +358,7 @@ section .cus-width {
 @media (max-width: 500px) {
 
   .about-content .avatar {
-    height: 60vw;
+    height: 65vw;
   }
 
   .about-content .text {
@@ -377,7 +372,6 @@ section .cus-width {
   border-radius: 10px;
   background-color: var(--color-main);
   color: white;
-  font-size: 1.5vh;
   cursor: pointer;
   transition: all .3s ease;
 }
