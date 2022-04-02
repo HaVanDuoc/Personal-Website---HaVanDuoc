@@ -137,8 +137,18 @@ body {
   color: var(--color-main);
 }
 
+/* Không Sticky */
 .hvd__navbar .menu li.active a {
   color: var(--color-main);
+}
+
+/* Có sticky */
+.hvd__navbar.sticky .menu li.active a {
+  color: var(--color-main);
+}
+
+.hvd__navbar.sticky .menu li.active a {
+  color: darkslategray;
 }
 
 .hvd__navbar .menu-btn {
@@ -187,6 +197,10 @@ body {
   .hvd__navbar .menu li a:hover {
     color: var(--color-title);
     transform: scale(1.1);
+  }
+
+  .hvd__navbar .menu li.active a{
+    color: darkslategray;
   }
 
   .hvd__navbar .menu-btn {
