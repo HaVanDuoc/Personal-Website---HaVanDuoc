@@ -1,8 +1,12 @@
 "use strict";
 
-window.onload = () => { menuToggle(); }
+window.onload = () => {
+    scrollFunction(); // Sau khi Load Page sẽ hiện luôn Navbar
+    menuToggle();
+    activeItemsMenu();
+}
 
-window.onscroll = () => { scrollFunction(); }
+window.onscroll = () => { var scrollY = this.scrollY; scrollFunction(); }
 
 // Function Toggle For Button Menu
 const menuToggle = () => {
@@ -17,19 +21,33 @@ const menuToggle = () => {
         menu.classList.remove('active');
         menuBtn.classList.remove('active');
     })
-};
+}
 
 // Function Scroll For Sticky Navbar
 const scrollFunction = () => {
 
-    var navbar = document.querySelector(".hvd__navbar");
-    var sticky = navbar.offsetHeight;
+    const navbar = document.querySelector(".hvd__navbar");
+    const navbarHeight = navbar.offsetHeight;
 
-    if (window.pageYOffset >= sticky) {
+    if (scrollY > navbarHeight) {
         navbar.classList.add("sticky");
     } else {
         navbar.classList.remove("sticky");
     }
-};
+}
+
+const activeItemsMenu = () => {
+    let menu = document.getElementById('menu');
+    let items = menu.getElementsByClassName("item");
+
+    for (let i = 0; i < items.length; i++) {
+        items[i].addEventListener("click", () => {
+            let currentItem = menu.getElementsByClassName("active");
+            console.log(currentItem);
+            currentItem[0].className = currentItem[0].className.replace(" active", "");
+            items[i].className += " active";
+        });
+    }
+}
 
 
