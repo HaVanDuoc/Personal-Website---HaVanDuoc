@@ -50,10 +50,10 @@ p {
 .fullscreen {
   width: 100%;
   min-height: 100vh;
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow: hidden; */
 }
 
 .clearfix {
@@ -209,9 +209,9 @@ section p {
   pointer-events: none;
 }
 
-section .cus-width {
+/* section .cus-width {
   height: 100%;
-}
+} */
 
 .hvd__home {
   height: 100vh;
@@ -221,10 +221,10 @@ section .cus-width {
 }
 
 .hvd__home .cus-width {
-  height: 100vh;
   display: flex;
   justify-content: start;
   align-items: center;
+  transform: translateY(100%);
 }
 
 .home-content {
@@ -281,7 +281,7 @@ section .cus-width {
 
 /* --------------------- About ---------------------- */
 
-.title-pagehome {
+.title-homepage {
   font-size: 30px;
   color: var(--color-main);
   display: flex;
@@ -292,8 +292,8 @@ section .cus-width {
   pointer-events: none;
 }
 
-.title-pagehome::before,
-.title-pagehome::after {
+.title-homepage::before,
+.title-homepage::after {
   content: "";
   width: 20vw;
   height: 5px;
@@ -301,9 +301,9 @@ section .cus-width {
   background: var(--color-main);
 }
 
-/* for title-pagehome */
+/* for title-homepage */
 @media (max-width: 500px) {
-  .title-pagehome {
+  .title-homepage {
     margin: 3vw;
   }
 }
