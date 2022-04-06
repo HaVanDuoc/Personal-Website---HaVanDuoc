@@ -27,8 +27,9 @@ const menuToggle = () => {
 const scrollFunction = () => {
 
     const navbar = document.querySelector(".hvd__navbar");
-    const navbarHeight = navbar.offsetHeight;
+    const navbarHeight = navbar.offsetHeight; // get Navbar height
 
+    // if Scroll location is larger Navbar Height then add Sticky Class and vice versa
     if (scrollY > navbarHeight) {
         navbar.classList.add("sticky");
     } else {
@@ -43,7 +44,6 @@ const activeItemsMenu = () => {
     for (let i = 0; i < items.length; i++) {
         items[i].addEventListener("click", () => {
             let currentItem = menu.getElementsByClassName("active");
-            console.log(currentItem);
             currentItem[0].className = currentItem[0].className.replace(" active", "");
             items[i].className += " active";
         });
