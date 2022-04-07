@@ -18,7 +18,7 @@ body {
   position: relative;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
   display: none;
 }
 
@@ -280,18 +280,12 @@ body {
 /* --------------------- Home ---------------------- */
 
 .hvd__home {
+  position: relative;
   height: 100vh;
   min-height: 500px;
   background: url("../images/bg-home.png") no-repeat center;
   font-family: "Ubuntu", sans-serif;
 }
-
-/* .hvd__home .cus-width {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  transform: translateY(100%);
-} */
 
 .home-content {
   color: white;
@@ -351,14 +345,26 @@ body {
 
 /* --------------------- About ---------------------- */
 
+.hvd__about {
+  position: relative;
+}
+
 .about-content {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 10px;
 }
 
-.about-content>div {
-  padding: 10px;
+.about-content .avatar,
+.about-content .text {
+  width: 40%;
+}
+
+.about-content .avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-content .avatar img {
@@ -368,11 +374,16 @@ body {
 }
 
 .about-content .text {
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 .about-content .text p {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.about-content .text .btn {
+  /* transform: translateY(100%); */
 }
 
 /* for About-content */
@@ -428,11 +439,14 @@ body {
 
 /* Section Education */
 
+.hvd__education {
+  position: relative;
+}
+
 .education-content {
   position: relative;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
 }
 
 .education-content>div {
@@ -441,6 +455,15 @@ body {
 
 .education-content .text {
   font-size: 1.5em;
+}
+
+.text p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  padding-bottom: 20px;
 }
 
 .education-content .image img {
@@ -455,7 +478,8 @@ body {
   font-size: 1.5em;
 }
 
-.skills-content .text, .skills-content .skill-chart{
+.skills-content .text,
+.skills-content .skill-chart {
   flex-basis: 50%;
   padding: 20px;
 }
@@ -471,12 +495,12 @@ body {
   margin: 10px 0;
 }
 
-.skill-chart .bars .info{
+.skill-chart .bars .info {
   display: flex;
   justify-content: space-between;
 }
 
-.skill-chart .bars .line{
+.skill-chart .bars .line {
   width: 100%;
   height: 5px;
   border-radius: 5px;
@@ -484,7 +508,7 @@ body {
   position: relative;
 }
 
-.skill-chart .bars .line::before{
+.skill-chart .bars .line::before {
   content: "";
   position: absolute;
   top: 0;
@@ -495,62 +519,211 @@ body {
   background: crimson;
 }
 
-.skill-chart .bars .html::before{
+.skill-chart .bars .html::before {
   width: 60%;
 }
-.skill-chart .bars .css::before{
+
+.skill-chart .bars .css::before {
   width: 60%;
 }
-.skill-chart .bars .js::before{
+
+.skill-chart .bars .js::before {
   width: 50%;
 }
-.skill-chart .bars .php::before{
+
+.skill-chart .bars .php::before {
   width: 50%;
 }
-.skill-chart .bars .sql::before{
+
+.skill-chart .bars .sql::before {
   width: 50%;
 }
 
 /* Section Projects */
 
-.stats {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  font-family: 'Ubuntu', sans-serif;
+.hvd__projects {
+  position: relative;
 }
 
-.stats .item{
-  min-width: 250px;
-  min-height: 300px;
-  background: crimson;
-  border-radius: 15px;
+.projects-content {
+  position: relative;
   display: grid;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  margin: 20px;
-  color: whitesmoke;
 }
 
-.stats .item i{
-  font-size: 5em;
+.projects-content .item {
+  max-width: 1200px;
+  max-height: 350px;
+  margin: 30px auto;
+  padding: 30px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  /* flex-wrap: wrap; */
 }
 
-.stats .item h2{
-  font-size: 7em;
+.projects-content .item .content {
+  flex-basis: 50%;
+  padding: 10px;
 }
 
-.stats .item p{
-  font-size: 1.5em;
+.projects-content .item .content .name {
+  font-weight: 600;
+  font-size: 2em;
+  padding-bottom: 20px;
+}
+
+.projects-content .item .info {
+  padding-bottom: 20px;
+}
+
+.projects-content .item .link span {
   font-weight: 500;
+}
+
+.projects-content .item .link a {
+  color: dodgerblue;
+  font-style: italic;
+}
+
+.projects-content .item .link a:hover {
+  text-decoration: underline;
+}
+
+.projects-content .item .image {
+  flex-basis: 50%;
+  padding: 10px;
+}
+
+.projects-content .item .image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+/* Section Contact */
+
+.hvd__contact {
+  position: relative;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-content .media {
+  width: 500px;
+}
+
+.contact-content .media>div {
+  display: grid;
+  margin: 20px 0;
+}
+
+.contact-content .media div label {
+  font-weight: 500;
+  font-size: 1.5em;
+}
+
+.contact-content .media div a {
+  font-size: 1.3em;
+  color: gray;
+}
+
+.contact-content .media div a:hover {
+  color: dodgerblue;
+}
+
+.contact-content .follow-me .link a {
+  font-size: 2em;
+  margin-right: 10px;
+}
+
+.contact-content .follow-me .link a i {
+  transition: all .3s ease;
+}
+
+.contact-content .follow-me .link a:hover i {
+  transform: scale(1.2);
+}
+
+.contact-content .follow-me .link a.fb {
+  color: darkblue;
+}
+
+.contact-content .follow-me .link a.yt {
+  color: crimson;
+}
+
+.contact-content .follow-me .link a.tt {
+  color: dodgerblue;
+}
+
+.contact-content .feedback {
+  width: 40%;
+}
+
+.form-feedback {
+  position: relative;
+  width: 100%;
+  display: grid;
+}
+
+.form-feedback .field {
+  width: 100%;
+  display: grid;
+  margin: 10px 0;
+}
+
+.form-feedback .field label {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.form-feedback .field input, .form-feedback .field textarea {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 20px;
+  line-height: 35px;
+  font-size: 1.2em;
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  outline: none;
+}
+
+.form-feedback .field textarea{
+  max-width: 100%;
+  height: 100px;
+}
+
+.form-feedback .field input:focus,
+.form-feedback .field input:hover,
+.form-feedback .field textarea:hover,
+.form-feedback .field textarea:focus {
+  border: 1px solid dodgerblue;
+}
+
+.form-feedback .btn-submit{
+  background: crimson;
+  border: 1px solid crimson;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  transition: all .3s ease;
+}
+
+.form-feedback .btn-submit:hover{
+  border: 1px solid crimson !important;
+  background: rgb(182, 10, 44);
 }
 
 /* Footer */
 
-footer{
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   background: crimson;
   width: 100%;
   display: flex;
@@ -561,8 +734,4 @@ footer{
   color: whitesmoke;
   min-height: 50px;
   box-shadow: 0 0 5px rgba(0, 0, 0, crimson);
-  position: absolute;
-  left: 0;
-  bottom: 0;
 }
-
