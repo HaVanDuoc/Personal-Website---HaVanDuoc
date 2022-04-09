@@ -13,6 +13,10 @@
   box-sizing: border-box;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   font: 14px 'Poppins', sans-serif;
   color: black;
@@ -33,6 +37,8 @@ li {
 }
 
 img {
+  width: 100%;
+  height: auto;
   vertical-align: middle;
   object-fit: cover;
 }
@@ -274,7 +280,7 @@ body {
 
 .about-content .avatar,
 .about-content .text {
-  width: 50%;
+  flex: 50%;
   padding: 20px;
 }
 
@@ -282,6 +288,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .about-content .avatar img {
@@ -626,8 +633,6 @@ footer {
 
 @media (max-width: 1250px) {
 
-  /* #region About */
-
   .education-content .text {
     flex: 100%;
   }
@@ -635,8 +640,6 @@ footer {
   .education-content .image {
     width: 70%;
   }
-
-  /* #endregion About */
 
 }
 
@@ -701,15 +704,6 @@ footer {
 
   /* About */
 
-  .about-content {
-    display: flex;
-  }
-
-  .about-content .avatar {
-    display: flex;
-    justify-content: center;
-  }
-
   .about-content .text {
     margin-top: 20px;
     margin-left: 0;
@@ -717,7 +711,7 @@ footer {
 
   .about-content .avatar,
   .about-content .text {
-    width: 80%;
+    flex: 100%;
   }
 
   .skills-content .text,
@@ -730,7 +724,7 @@ footer {
     flex: 100%;
   }
 
-  .contact-content .media{
+  .contact-content .media {
     display: flex;
     justify-content: space-around;
   }
@@ -743,6 +737,7 @@ footer {
   .projects-content .item .image {
     flex-basis: 100%;
   }
+
 }
 
 @media (max-width: 700px) {
@@ -750,10 +745,11 @@ footer {
     width: 100%;
   }
 
-  .contact-content .media div label{
+  .contact-content .media div label {
     font-size: 1.2em;
   }
-  .contact-content .media div a{
+
+  .contact-content .media div a {
     font-size: 1.1em;
   }
 }
@@ -784,13 +780,22 @@ footer {
     font-size: 3.5vw;
   }
 
+  .about-content{
+    padding: 0;
+  }
+
   .about-content .text {
     margin-left: 0;
   }
 
   .about-content .avatar,
   .about-content .text {
-    width: 95%;
+    flex: 100%;
+  }
+
+  .about-content .avatar img{
+    width: 100%;
+    height: auto;
   }
 
 }
