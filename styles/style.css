@@ -4,6 +4,7 @@
   --color-main: crimson;
   --bg-color-navbar: black;
   --color-title: darkslategray;
+  --vw75: 75vw;
 }
 
 * {
@@ -41,11 +42,9 @@ video {
   height: auto;
 }
 
-/* p {
-  padding-bottom: 17px;
+p {
   text-align: justify;
-  transition: all .3s ease;
-} */
+}
 
 .max-width {
   width: 100%;
@@ -77,8 +76,6 @@ video {
 body {
   font-family: 'Poppins', sans-serif;
 }
-
-
 
 /* --------------------- Navbar ---------------------- */
 
@@ -177,52 +174,6 @@ body {
   color: darkslategray;
 }
 
-
-@media (max-width: 1000px) {
-  .hvd__navbar .menu {
-    display: inline-block;
-    position: absolute;
-    top: 90px;
-    right: 2vw;
-    border-radius: 10px;
-    background: var(--color-main);
-    z-index: 999;
-  }
-
-  .hvd__navbar .menu li {
-    margin: 5px;
-    display: none;
-  }
-
-  .hvd__navbar .menu.active li {
-    display: block;
-  }
-
-  .hvd__navbar .menu li a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .hvd__navbar .menu li a:hover {
-    color: var(--color-title);
-    transform: scale(1.1);
-  }
-
-  .hvd__navbar .menu li.active a {
-    color: darkslategray;
-  }
-
-  .hvd__navbar .menu-btn {
-    display: block;
-  }
-
-  .hvd__navbar .cus-width {
-    justify-content: space-between;
-  }
-}
-
-
 /* Style General for Home Page */
 
 #about,
@@ -234,13 +185,13 @@ body {
   padding: 70px 0;
 }
 
-#about>div,
+/* #about>div,
 #education>div,
 #skills p,
 #projects>div,
 #contact>div {
   display: grid;
-}
+} */
 
 #about p,
 #education p,
@@ -268,13 +219,6 @@ body {
   height: 5px;
   display: block;
   background: black;
-}
-
-/* for title-homepage */
-@media (max-width: 500px) {
-  .title-homepage {
-    margin: 3vw;
-  }
 }
 
 /* --------------------- Home ---------------------- */
@@ -315,34 +259,6 @@ body {
   transition: font-size .3s ease;
 }
 
-@media (max-width: 1000px) {
-  .home-content .text-1 {
-    font-size: 20px;
-  }
-
-  .home-content .text-2 {
-    font-size: 70px;
-  }
-
-  .home-content .text-3 {
-    font-size: 40px;
-  }
-}
-
-@media (max-width: 500px) {
-  .home-content .text-1 {
-    font-size: 20px;
-  }
-
-  .home-content .text-2 {
-    font-size: 60px;
-  }
-
-  .home-content .text-3 {
-    font-size: 40px;
-  }
-}
-
 /* --------------------- About ---------------------- */
 
 .hvd__about {
@@ -358,7 +274,8 @@ body {
 
 .about-content .avatar,
 .about-content .text {
-  width: 40%;
+  width: 50%;
+  padding: 20px;
 }
 
 .about-content .avatar {
@@ -382,39 +299,7 @@ body {
   text-align: justify;
 }
 
-.about-content .text .btn {
-  /* transform: translateY(100%); */
-}
-
 /* for About-content */
-@media (max-width: 1000px) {
-  .about-content {
-    display: inline-block;
-  }
-
-  .about-content .avatar {
-    display: flex;
-    justify-content: center;
-  }
-
-  .about-content .text {
-    margin-top: 20px;
-    margin-left: 0;
-  }
-
-}
-
-/* for About-content */
-@media (max-width: 500px) {
-
-  .about-content .avatar {
-    height: 80vw;
-  }
-
-  .about-content .text {
-    margin-left: 0;
-  }
-}
 
 .about-content .btn {
   margin-top: 50px;
@@ -430,13 +315,6 @@ body {
   background-color: brown;
 }
 
-@media (max-width: 500px) {
-  .hvd__about .btn {
-    padding: 5px 20px;
-    font-size: 3.5vw;
-  }
-}
-
 /* Section Education */
 
 .hvd__education {
@@ -446,15 +324,26 @@ body {
 .education-content {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-}
-
-.education-content>div {
-  padding: 10px;
 }
 
 .education-content .text {
   font-size: 1.5em;
+  width: 55%;
+  padding: 10px;
+}
+
+.education-content .image {
+  width: 45%;
+  padding: 10px;
+  transition: all .3s ease;
+}
+
+.education-content .image img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
 
 .text p,
@@ -466,21 +355,18 @@ h5 {
   padding-bottom: 20px;
 }
 
-.education-content .image img {
-  width: 600px;
-  border-radius: 5px;
-}
-
 /* Section Skills */
+
 .skills-content {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   font-size: 1.5em;
 }
 
 .skills-content .text,
 .skills-content .skill-chart {
-  flex-basis: 50%;
+  width: 50%;
   padding: 20px;
 }
 
@@ -553,12 +439,12 @@ h5 {
 
 .projects-content .item {
   max-width: 1200px;
-  max-height: 350px;
+  min-height: 350px;
   margin: 30px auto;
   padding: 30px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   display: flex;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
 }
 
 .projects-content .item .content {
@@ -608,11 +494,12 @@ h5 {
 
 .contact-content {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
 .contact-content .media {
-  width: 500px;
+  width: 30%;
 }
 
 .contact-content .media>div {
@@ -660,7 +547,7 @@ h5 {
 }
 
 .contact-content .feedback {
-  width: 40%;
+  width: 50%;
 }
 
 .form-feedback {
@@ -680,7 +567,8 @@ h5 {
   font-weight: 500;
 }
 
-.form-feedback .field input, .form-feedback .field textarea {
+.form-feedback .field input,
+.form-feedback .field textarea {
   width: 100%;
   min-height: 50px;
   padding: 0 20px;
@@ -692,7 +580,7 @@ h5 {
   outline: none;
 }
 
-.form-feedback .field textarea{
+.form-feedback .field textarea {
   max-width: 100%;
   height: 100px;
 }
@@ -704,7 +592,7 @@ h5 {
   border: 1px solid dodgerblue;
 }
 
-.form-feedback .btn-submit{
+.form-feedback .btn-submit {
   background: crimson;
   border: 1px solid crimson;
   cursor: pointer;
@@ -713,7 +601,7 @@ h5 {
   transition: all .3s ease;
 }
 
-.form-feedback .btn-submit:hover{
+.form-feedback .btn-submit:hover {
   border: 1px solid crimson !important;
   background: rgb(182, 10, 44);
 }
@@ -734,4 +622,175 @@ footer {
   color: whitesmoke;
   min-height: 50px;
   box-shadow: 0 0 5px rgba(0, 0, 0, crimson);
+}
+
+@media (max-width: 1250px) {
+
+  /* #region About */
+
+  .education-content .text {
+    flex: 100%;
+  }
+
+  .education-content .image {
+    width: 70%;
+  }
+
+  /* #endregion About */
+
+}
+
+@media (max-width: 1000px) {
+
+  /* navbar */
+  .hvd__navbar .menu {
+    display: inline-block;
+    position: absolute;
+    top: 90px;
+    right: 2vw;
+    border-radius: 10px;
+    background: var(--color-main);
+    z-index: 999;
+  }
+
+  .hvd__navbar .menu li {
+    margin: 5px;
+    display: none;
+  }
+
+  .hvd__navbar .menu.active li {
+    display: block;
+  }
+
+  .hvd__navbar .menu li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hvd__navbar .menu li a:hover {
+    color: var(--color-title);
+    transform: scale(1.1);
+  }
+
+  .hvd__navbar .menu li.active a {
+    color: darkslategray;
+  }
+
+  .hvd__navbar .menu-btn {
+    display: block;
+  }
+
+  .hvd__navbar .cus-width {
+    justify-content: space-between;
+  }
+
+  /* Home */
+
+  .home-content .text-1 {
+    font-size: 20px;
+  }
+
+  .home-content .text-2 {
+    font-size: 70px;
+  }
+
+  .home-content .text-3 {
+    font-size: 40px;
+  }
+
+  /* About */
+
+  .about-content {
+    display: flex;
+  }
+
+  .about-content .avatar {
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-content .text {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+
+  .about-content .avatar,
+  .about-content .text {
+    width: 80%;
+  }
+
+  .skills-content .text,
+  .skills-content .skill-chart {
+    flex-basis: 100%;
+  }
+
+  .contact-content .media,
+  .contact-content .feedback {
+    flex: 100%;
+  }
+
+  .contact-content .media{
+    display: flex;
+    justify-content: space-around;
+  }
+
+}
+
+@media (max-width: 850px) {
+
+  .projects-content .item .content,
+  .projects-content .item .image {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .education-content .image {
+    width: 100%;
+  }
+
+  .contact-content .media div label{
+    font-size: 1.2em;
+  }
+  .contact-content .media div a{
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .title-homepage {
+    margin: 3vw;
+  }
+
+  /* Home */
+  .home-content .text-1 {
+    font-size: 20px;
+  }
+
+  .home-content .text-2 {
+    font-size: 60px;
+  }
+
+  .home-content .text-3 {
+    font-size: 40px;
+  }
+
+  /* about */
+
+  .hvd__about .btn {
+    padding: 5px 20px;
+    font-size: 3.5vw;
+  }
+
+  .about-content .text {
+    margin-left: 0;
+  }
+
+  .about-content .avatar,
+  .about-content .text {
+    width: 95%;
+  }
+
 }
